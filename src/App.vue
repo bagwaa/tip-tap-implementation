@@ -34,7 +34,8 @@
 
 <script>
 import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
-import { Heading, Bold, ListItem, BulletList, Image } from 'tiptap-extensions'
+import { Heading, Bold, ListItem, BulletList } from 'tiptap-extensions'
+import Image from './Image'
 
 export default {
   name: 'App',
@@ -51,7 +52,7 @@ export default {
           new Heading(),
           new BulletList(),
           new ListItem(),
-          new Image()
+          new Image() // see https://github.com/ueberdosis/tiptap/issues/573 for wrapping the image with a div
         ],
         onUpdate: ({ getHTML }) => {
           this.content = getHTML()
